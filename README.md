@@ -52,7 +52,7 @@ python merge_stress_separation.py tensile_z_separation_z.csv stress_interface_z.
 ### 3. Extract CZM Parameters
 
 ```bash
-python extract_czm_parameters.py stress_strain_z_with_separation.txt --plot
+python extract_czm_parameters.py stress_interface_z_with_separation.dat --plot
 # Default options for smoothing: --window 15 --poly 3 --plot
 # Outputs:
 #   - czm_parameters_z.dat (model parameters)
@@ -165,7 +165,3 @@ Input file determines output names:
 - Python 3.7+
 - OVITO 3.x (for trajectory analysis)
 - NumPy, Pandas, SciPy, Matplotlib
-
-## Contact
-
-[Your contact information]
