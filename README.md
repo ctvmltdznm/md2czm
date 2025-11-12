@@ -45,7 +45,8 @@ ovitos shear_separation.py shear_xz.lammpstrj z
 
 ```bash
 python merge_stress_separation.py tensile_z_separation_z.csv stress_interface_z.dat
-# Output: stress_strain_z_with_separation.dat
+# Output: stress_interface_z_with_separation.dat
+# Might require trimming to include only first peak (if multiple)
 ```
 
 ### 3. Extract CZM Parameters
@@ -134,7 +135,7 @@ Ensures parabolas are concave down (physical requirement).
 
 ## Example Output
 
-![CZM Comparison](example_output.png)
+![CZM Comparison](/example/czm_curve_xy.png)
 
 - **Left:** Model comparison on MD data
 - **Right:** Residual analysis (fit quality)
