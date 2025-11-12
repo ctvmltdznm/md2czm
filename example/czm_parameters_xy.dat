@@ -1,0 +1,49 @@
+# CZM Parameters - SHEAR Mode - XY
+# Generated from traction-separation data
+#====================================================================
+
+# Common Parameters
+K = 37514928.481402  # MPa/mm - Initial stiffness
+tau_c = 148.517830  # MPa
+G_II_MD = 1.594e-04  # N/mm
+delta_max = 1.394e-06  # mm
+
+#====================================================================
+# TRIANGULAR MODEL
+#====================================================================
+delta_min_tri = -3.708e-09  # mm
+delta_c_tri = 2.143e-06  # mm
+G_tri = 1.594e-04  # N/mm
+
+#====================================================================
+# EXPONENTIAL MODEL
+#====================================================================
+delta_n_exp = 7.232e-07  # mm
+G_exp = 1.074e-04  # N/mm
+R_squared_exp = -1.086330
+RMSE_exp = 65.270745  # MPa
+
+#====================================================================
+# BILINEAR PARABOLIC MODEL
+#====================================================================
+# T = a*(delta - delta_peak)^2 + b*(delta - delta_peak) + T_peak
+a1_load = -6.949121e+14  # (< 0)
+b1_load = 1.418906e+07
+a2_unload = -1.153862e+14  # (< 0)
+b2_unload = 1.741104e+07
+delta_peak_bilin = 4.453e-07  # mm
+T_peak_bilin = 148.517830  # MPa
+delta_max_bilin = 1.658e-06  # mm (T=0)
+G_bilin = 1.600e-04  # N/mm
+R_squared_bilin = 0.968307
+RMSE_bilin = 8.044722  # MPa
+
+#====================================================================
+# For FEM Implementation:
+#====================================================================
+# RECOMMENDED: Use Bilinear Parabolic model
+# Loading (delta <= 4.453e-07):
+#   T = -6.949121e+14*(delta - 4.453e-07)^2 + 1.418906e+07*(delta - 4.453e-07) + 148.518
+# Unloading (delta > 4.453e-07):
+#   T = -1.153862e+14*(delta - 4.453e-07)^2 + 1.741104e+07*(delta - 4.453e-07) + 148.518
+# Element deletion: delta >= 1.658e-06 mm
